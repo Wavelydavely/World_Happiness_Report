@@ -1,0 +1,14 @@
+CREATE TABLE world_happiness_report (
+	Country_name VARCHAR,
+	year INT,
+	Life_Ladder DEC,
+	Log_GDP_per_capita DEC,
+	Social_support DEC,
+	Healthy_life_expectancy_at_birth DEC,
+	Freedom_to_make_life_choices DEC,
+	Generosity DEC,
+	Perceptions_of_corruption DEC,
+	Positive_affect DEC,
+	Negative_affect DEC
+);
+SELECT * FROM world_happiness_report LIMIT 10;
