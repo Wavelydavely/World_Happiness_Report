@@ -49,3 +49,4 @@ To identify which variable(s) are the most predictive of a country’s happiness
 ##  Database
 
 A provisional database, likely in PostgreSQL, will be created and referenced in the machine learning model overview. The database will house each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in pgAdmin we are going to add 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Some of these variables will likely be removed from the final model. A table will also be created for the world happiness report which holds 11 variables of similar context. The two tables will then be joined to create one table for the machine learning model, visualizations, and other analyses. To do this we will need to rename, match, and add columns via python pandas so we can successfully join in SQL. 
+
