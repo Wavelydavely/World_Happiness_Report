@@ -3,7 +3,7 @@
 Pandas will be used to clean the data and perform an exploratory analysis. Further analysis will be completed using Python.
 
 ## Database Storage
-Mongo is the database we intend to use, and we will integrate Flask to display the data.
+We plan on using PostgreSQL for our database storage. This will be used in our machine learning model where each variable and value from our happiness report csv files will be stored in the database. We have a 2021 report and another report with multiple years so we will create two tables and joined to create one table.
 
 ## Machine Learning
 SciKitLearn is the ML library we'll be using to create a classifier. Our training and testing setup is ___. Extra ML verbiage here.
