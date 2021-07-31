@@ -17,3 +17,7 @@ In this project, we are aiming to answer the following questions:
 What variables are most predictive of happiness by country?
 What variables are most predictive of happiness by region of the world?
 Which region’s happiness has gone up the most? Which has gone down?
+
+## GitHub
+Each member of the team has a branch in the World_Happiness_Report where code will be committed before merging with the main branch.  A pull request will be created each time someone from the team wants to work on code from the main branch and any code being merged to the main branch will also be reviewed to avoid conflicts during the process.
+Communication with the team will also occur outside of GitHub via slack and video to ensure proper use of GitHub.
