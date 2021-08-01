@@ -1,0 +1,16 @@
+DROP TABLE IF EXISTS World_Happiness_Report_2021;
+
+CREATE TABLE World_Happiness_Report_2021 (
+	Country VARCHAR,
+	Year INT,
+	World_Region DEC,
+	Happiness_Score DEC,
+	Economic_Production DEC,
+	Social_Support DEC,
+	Life_Expectancy DEC,
+	Freedom DEC,
+	Generosity DEC,
+	Perceptions_of_Corruption DEC
+);
+
+SELECT * FROM World_Happiness_Report_2021 LIMIT 10;
