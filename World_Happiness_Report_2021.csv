@@ -1,4 +1,4 @@
-Country,Year,World Region,Happiness Score,Economic Production,Social Support,Life Expectancy,Freedom,Generosity,Perceptions of Corruption
+Country,Year,World_Region,Happiness_Score,Economic_Production,Social_Support,Life_Expectancy,Freedom,Generosity,Perceptions_of_Corruption
 Finland,2021,Western Europe,7.842,10.775,0.954,72.0,0.949,-0.098,0.186
 Denmark,2021,Western Europe,7.62,10.933,0.954,72.7,0.946,0.03,0.179
 Switzerland,2021,Western Europe,7.571,11.117,0.942,74.4,0.919,0.025,0.292

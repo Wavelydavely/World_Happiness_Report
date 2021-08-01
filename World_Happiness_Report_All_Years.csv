@@ -1,4 +1,4 @@
-Country,Year,World Region,Happiness Score,Economic Production,Social Support,Life Expectancy,Freedom,Generosity,Perceptions of Corruption
+Country,Year,World_Region,Happiness_Score,Economic_Production,Social_Support,Life_Expectancy,Freedom,Generosity,Perceptions_of_Corruption
 Afghanistan,2008,0,3.724,7.37,0.451,50.8,0.718,0.168,0.882
 Afghanistan,2009,0,4.402,7.54,0.552,51.2,0.679,0.19,0.85
 Afghanistan,2010,0,4.758,7.647,0.539,51.6,0.6,0.121,0.707
