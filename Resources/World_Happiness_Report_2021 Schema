@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS World_Happiness_Report_2021;
 CREATE TABLE World_Happiness_Report_2021 (
 	Country VARCHAR,
 	Year INT,
-	World_Region DEC,
+	World_Region VARCHAR,
 	Happiness_Score DEC,
 	Economic_Production DEC,
 	Social_Support DEC,
