@@ -34,6 +34,11 @@ Given that the data set includes majority continuous variables that would be use
 There are 6 independent variables that will be utilized in the model – economic production, social support, life expectancy, freedom, absence of corruption, and generosity – to predict the dependent variable – happiness score.  All of these variables will be used to train the model.
 The R-squared score, as an output of the model, will help determine the strength of the initial multiple linear regression model and whether it is predictive of the happiness score.  A score higher than .75 will be ideal; however, a lower score may be accepted as some of the variables measure human perception, which adds complexity to the model.
 To identify which variable(s) are the most predictive of a country’s happiness score, backwards elimination will be used and any independent variable with a p-value >.05 will be removed from the multiple linear regression model.  This approach will likely increase the overall R-squared score of the multiple linear regression.
+
+- Description of preliminary data preprocessing
+- Description of preliminary feature engineering and selection including decision-making process
+- Description of how data was split into training and testing sets
+- Explanation of model choice, including limitations and benefits
  
 ##  Database
 A provisional database, likely in PostgreSQL, will be created and referenced in the machine learning model overview. The database will house each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in pgAdmin we are going to add 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Some of these variables will likely be removed from the final model. A table will also be created for the world happiness report which holds 11 variables of similar context. The two tables will then be joined to create one table for the machine learning model, visualizations, and other analyses. To do this we will need to rename, match, and add columns via python pandas so we can successfully join in SQL. 
