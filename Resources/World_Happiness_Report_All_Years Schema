@@ -1,7 +1,8 @@
+DROP TABLE IF EXISTS World_Happiness_Report_All_Years;
+
 CREATE TABLE World_Happiness_Report_All_Years (
 	Country VARCHAR,
 	Year INT,
-	World_Region VARCHAR,
 	Happiness_Score DEC,
 	Economic_Production DEC,
 	Social_Support DEC,
