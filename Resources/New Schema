@@ -1,0 +1,49 @@
+DROP TABLE IF EXISTS world_region;
+
+CREATE TABLE world_region (
+	Country VARCHAR UNIQUE,
+	World_Region VARCHAR,
+	PRIMARY KEY (country)
+);
+
+DROP TABLE IF EXISTS World_Happiness_Report_All_Years;
+
+CREATE TABLE World_Happiness_Report_All_Years (
+	Country VARCHAR,
+	Year INT,
+	World_Region VARCHAR,
+	Happiness_Score DEC,
+	Economic_Production DEC,
+	Social_Support DEC,
+	Life_Expectancy DEC,
+	Freedom DEC,
+	Generosity DEC,
+	Perceptions_of_Corruption DEC,
+	FOREIGN KEY (country) REFERENCES world_region (country)
+);
+
+SELECT * FROM world_region;
+SELECT * FROM World_Happiness_Report_All_Years;
+SELECT * FROM World_Happiness_Report_2021;
+
+
+SELECT 	World_Happiness_Report_All_Years.Country,
+	World_Happiness_Report_All_Years.Years,
+	World_Happiness_Report_All_Years.world_region,
+	World_Happiness_Report_All_Years.Happiness_Score,
+	World_Happiness_Report_All_Years.Economic_Production,
+	World_Happiness_Report_All_Years.Social_Support,
+	World_Happiness_Report_All_Years.Life_Expectancy,
+	World_Happiness_Report_All_Years.Freedom,
+	World_Happiness_Report_All_Years.Generosity,
+	World_Happiness_Report_All_Years.Perceptions_of_Corruption
+FROM World_Happiness_Report_All_Years
+LEFT JOIN world_region
+ON World_Happiness_Report_All_Years.country = world_region.country;
+
+UPDATE World_Happiness_Report_All_Years
+SET World_Region = (
+	SELECT world_region FROM world_region
+	WHERE World_Happiness_Report_All_Years.country = world_region.country);
+
+
