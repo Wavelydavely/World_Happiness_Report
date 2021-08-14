@@ -1,5 +1,5 @@
 #  World Happiness Report
-Link to Draft Presentation in Google Slides  
+[Link to Draft Presentation in Google Slides](https://docs.google.com/presentation/d/1Qv0ZudXsBgX-yyED3t1bUAoBdCuCKwvfBvbadPLGPpc/edit#slide=id.p)  
 
 ## Overview
 
