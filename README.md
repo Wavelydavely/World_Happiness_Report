@@ -9,34 +9,36 @@ This dataset consists of numerous continuous variables presenting the opportunit
 
 The source data includes the following relevant fields for analysis.  Most countries have multiple years of data represented in the dataset.
 
-Country (categorical)
+ - Country (categorical)
 
-Region of the World (categorical)
+ - Region of the World (categorical)
 
-Year (categorical)
+ - Year (categorical)
 
-Happiness Score (continuous)
+ - Happiness Score (continuous)
 
-Economic Production (continuous)
+ - Economic Production (continuous)
 
-Social Support (continuous)
+ - Social Support (continuous)
 
-Life Expectancy (continuous)
+ - Life Expectancy (continuous)
 
-Freedom (continuous)
+ - Freedom (continuous)
 
-Absence of Corruption (continuous)
+ - Absence of Corruption (continuous)
 
-Generosity (continuous)
+ - Generosity (continuous)
+
 
 
 This project aimed to answer the following questions:
 
-Leveraging machine learning and the world happiness report data, can a robust, predictive model be created?
+1)  Leveraging machine learning and the world happiness report data, can a robust, predictive model be created?
 
-What variables are most predictive of happiness score by geographical area?
+2)  What variables are most predictive of happiness score by geographical area?
 
-How has happiness changed over time by world region and country?
+3)  How has happiness changed over time by world region and country?
+
 
 To accomplish the goals of this project the data set was explored and cleaned in PANDAS, a database was created using AWS/RDS and PostgreSQL in which the final data tables were created, machine learning models were constructed, and the analyses were visualized via a Tableau dashboard.
 
@@ -65,16 +67,16 @@ Two models were selected to attempt creating a robust, predictive model – Mult
 There are limitations and benefits to both models: 
 -	Multiple Linear Regression Model
 
-•	Advantages: Can be trained easily, mathematical equations are simple
+	•	Advantages: Can be trained easily, mathematical equations are simple
 
-•	Disadvantages: More likely to underfit data resulting in low accuracy, outliers can heavily skew the data, overly
+	•	Disadvantages: More likely to underfit data resulting in low accuracy, outliers can heavily skew the data, overly
 
 
 -	Random Forest Model
 
-•	Advantages: Robust against overfitting, improves accuracy, ranks importance of variables, and works well with thousands of categorical and continuous variables
+	•	Advantages: Robust against overfitting, improves accuracy, ranks importance of variables, and works well with thousands of categorical and continuous variables
 
-•	Disadvantages: High number of trees uses a lot of memory, does not determine significance of each variable
+	•	Disadvantages: High number of trees uses a lot of memory, does not determine significance of each variable
 
 
 #### Multiple Linear Regression 
@@ -82,7 +84,9 @@ There are limitations and benefits to both models:
 For the multiple linear regression model the data was split into target and feature variables groups and then into training and testing data sets.  Variables were also scaled using Standard.Scaler()
 
 Target Variable  = happiness_score
+
 Feature Variables = economic_production, social_support, life_expectancy, freedom, generosity, and perception_of_corruption
+
 Training and Testing Groups = X_train, X_test, y_train, y_test
 
 The R-squared score, as an output of the model, will help determine the strength of the initial multiple linear regression model and whether it is predictive of the happiness score.  A score higher than .75 will be ideal; however, a lower score may be accepted as some of the variables measure human perception, which adds complexity to the model.
@@ -92,7 +96,9 @@ The R-squared score, as an output of the model, will help determine the strength
 For the random forest model the categorical variables were encoded as numeric values using the LabelEncoder(), the data was split into target and feature variables groups and then into training and testing data sets.  Variables were also scaled using Standard.Scaler()
 
 Target Variable  = happiness_score
+
 Feature Variables = economic_production, social_support, life_expectancy, freedom, generosity, perception_of_corruption, country, year, and world_region
+
 Training and Testing Groups = X_train, X_test, y_train, y_test
 
 The random forest model was expected to perform better than the multiple linear regression model and also help identify which feature variables are most important in predicting the happiness_score
