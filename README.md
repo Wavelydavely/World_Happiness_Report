@@ -109,15 +109,24 @@ Between segments 2 and 3 the team decided to remove the backwards elimination an
 
 Given that both models were regression analyses there was no accuracy score or confusion matrix for reporting purposes.  The R-squared value was used to evaluate model performance.  The R-squared value for the multiple linear regression and random forest models were .74 and .86, respectively, indicating that the random forest model is the better model at predicting a country’s happiness score.  
 
-INSERT pic of linear regression R-squared here
+Linear Regression R-squared Value
 
-INSERT pic of random forest R-squared here
+![Linear Regression R squared](https://user-images.githubusercontent.com/80165223/130359605-85ac3dfa-bb17-4c08-b313-d65629b1b8d2.png)
+
+
+Random Forest R-squared Value
+
+![Random Forest R squared](https://user-images.githubusercontent.com/80165223/130359612-130e0d2a-0ac1-4d61-8e71-9574eaeb94dd.png)
+
 
 In ranking the variables of most important to least important in the random forest model, the following results were yielded, which demonstrates that economic production in the model is weighted significantly more heavily than the others:
 
-INSERT picture of list here
 
-####Statistical Analysis
+![Random Forest Feature Importance](https://user-images.githubusercontent.com/80165223/130359592-2273435f-5adf-44d1-b56f-c79553b478ea.png)
+
+
+
+#### Statistical Analysis
 
 No additional statistical analyses were conducted beyond the machine learning models and the trends displayed on the Tableau dashboard.  If more time was provided, a linear regression model would be utilized to determine if there are statistically significantly changes in happiness scores over time by countries and regions.
 
