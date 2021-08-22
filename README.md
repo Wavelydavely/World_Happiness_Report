@@ -1,6 +1,7 @@
 #  World Happiness Report
-[Link to Draft Presentation in Google Slides](https://docs.google.com/presentation/d/1Qv0ZudXsBgX-yyED3t1bUAoBdCuCKwvfBvbadPLGPpc/edit#slide=id.p)  
+[Link to Draft Presentation in Google Slides](https://docs.google.com/presentation/d/1Mhrzv_qG6DSvkZ4WcqwE0Hmt7kNobXfSib1PZnh_w1s/edit#slide=id.ge779680b70_1_5)  
 
+[Link to Draft Tableau Dashboard](https://public.tableau.com/app/profile/david.coyle/viz/WorldHappinessReport_16286523395800/WorldHappinessReport?publish=yes)
 ## Overview
 
 The selected topic for the project is the world happiness report utilizing the world happiness dataset from Kaggle.  The central base for this data since 2013 is Sustainable Development Solutions Network and the Center for Sustainable Development at Columbia University. 
@@ -42,11 +43,9 @@ This project aimed to answer the following questions:
 
 To accomplish the goals of this project the data set was explored and cleaned in PANDAS, a database was created using AWS/RDS and PostgreSQL in which the final data tables were created, machine learning models were constructed, and the analyses were visualized via a Tableau dashboard.
 
-## Project Team Communications
+##  Database
 
-Each member of the team created branches specific to tasks in the World_Happiness_Report repository where code was committed before merging with the main branch.  Any code being merged to the main branch was reviewed to avoid conflicts during the process. Communication within the team also occurred outside of GitHub via slack, Google Docs, and Zoom to ensure proper use of GitHub.  
-
-Team roles were defined at the start of each week to avoid duplication of work and, therefore, increasing the chances of GitHub merge conflicts.  Status updates of each team member’s tasks for the week were provided at the start of each meeting.  The group addressed issues with the project and in GitHub in team meetings and with student support. 
+A database was created utilizing AWS/RDS and PostgreSQL. The database houses each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in PostgreSQL we added 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Many variables were removed from the final model. A table was created for the world happiness report which holds 11 variables of similar context. The two tables were combined using a UNION to create one table for the machine learning model, visualizations, and other analyses. 
 
 ## Analysis
 
@@ -58,18 +57,18 @@ The data were investigated and cleaned primarily using PANDAS with some final pa
 
 -	Addressing missing data by removing records from dataset or, when possible, filling in missing value with average score for field when country had multiple values with which to work
 
--	Creating a UNION of two tables in data set to have all years data in one table and have the world_region value available for every record in dataset
+-	Creating a UNION of two tables in data set to have all years data in one table and have the world_region value available for every record in dataset (UNION was created in the database)
 
 ### Machine Learning Models
 
-Two models were selected to attempt creating a robust, predictive model – Multiple Linear Regression and Random Forest. Multiple Linear Regression was selected as the starting point due to the dataset being primarily continuous data variables that directly influence the happiness score which is also continuous.  Random Forest was selected as the next step in the machine learning process to see if the model could be made more robust and predictive, account for the three categorical variables through label encoding, and then rank the importance of the feature variables in the model.
+Two models were selected to attempt creating a robust, predictive model – Multiple Linear Regression and Random Forest. Multiple Linear Regression was selected as the starting point due to the dataset being primarily continuous data variables that directly influence the happiness score which is also a continuous variable.  Random Forest was selected as the next step in the machine learning process to see if the model could be made more robust and predictive, account for the three categorical variables through label encoding, and then rank the importance of the feature variables in the model.
 
 There are limitations and benefits to both models: 
 -	Multiple Linear Regression Model
 
 	•	Advantages: Can be trained easily, mathematical equations are simple
 
-	•	Disadvantages: More likely to underfit data resulting in low accuracy, outliers can heavily skew the data, overly
+	•	Disadvantages: More likely to underfit data resulting in low accuracy, outliers can heavily skew the data
 
 
 -	Random Forest Model
@@ -99,16 +98,38 @@ Target Variable  = happiness_score
 
 Feature Variables = economic_production, social_support, life_expectancy, freedom, generosity, perception_of_corruption, country, year, and world_region
 
-Training and Testing Groups = X_train, X_test, y_train, y_test
+Training and Testing Groups = X_train, X_test, y_train, y_test (Note: this test/train data set is the same as what was used for the linear regression model) 
+
 
 The random forest model was expected to perform better than the multiple linear regression model and also help identify which feature variables are most important in predicting the happiness_score
 
 To identify which variable(s) are the most predictive of a country’s happiness score, backwards elimination may be used and any independent variable with a p-value >.05 will be removed from the multiple linear regression model.  This approach will likely increase the overall R-squared score of the multiple linear regression.
- 
 
-##  Database
+Between segments 2 and 3 the team decided to remove the backwards elimination analysis and only use the variables importance ranking from the random forest model.   Additionally, the code was modified so that the same train/test data set was used in both machine learning models allowing for better performance comparison.
 
-A database was created utilizing AWS/RDS and PostgreSQL. The database houses each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in PostgreSQL we added 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Many variables were removed from the final model. A table was created for the world happiness report which holds 11 variables of similar context. The two tables were combined using a UNION to create one table for the machine learning model, visualizations, and other analyses. 
+Given that both models were regression analyses there was no accuracy score or confusion matrix for reporting purposes.  The R-squared value was used to evaluate model performance.  The R-squared value for the multiple linear regression and random forest models were .74 and .86, respectively, indicating that the random forest model is the better model at predicting a country’s happiness score.  
+
+INSERT pic of linear regression R-squared here
+
+INSERT pic of random forest R-squared here
+
+In ranking the variables of most important to least important in the random forest model, the following results were yielded, which demonstrates that economic production in the model is weighted significantly more heavily than the others:
+
+INSERT picture of list here
+
+####Statistical Analysis
+
+No additional statistical analyses were conducted beyond the machine learning models and the trends displayed on the Tableau dashboard.  If more time was provided, a linear regression model would be utilized to determine if there are statistically significantly changes in happiness scores over time by countries and regions.
+
 
 ##  Dashboard
-A storyboard in Tableau was leveraged to tell the story of the data, machine learning models, and other trends observed that relate to the project goals. The final visuals will focus on the predictive value of the machine learning models, the most important feature variables in predicting happiness scores, trends over time as happiness relates to world region and country, and geographical distribution of happiness.  Interactive features will be applied including slicers to focus on time period, country, or world region.  Additional drill down features will also be implemented to dig deeper into individual feature scores that determine the countries’ happiness scores.
+
+A storyboard in Tableau (link above) was leveraged to tell the story of the data, machine learning models, and other trends observed that relate to the project goals. The final visuals focus on the predictive value of the machine learning models, the most important feature variables in predicting happiness scores, trends over time as happiness relates to world region and country, and geographical distribution of happiness.  
+
+## Summary
+The final results of the project have indicated that a random forest model is the most robust machine learning model and that economic production score is the most important variable in that model in predicting happiness.  Other feature variables that were expected to be strong predictors of happiness were significantly less predictive than economic production, like generosity and perceptions of corruption.
+
+When evaluating trends over time regarding a country or region’s happiness score, there are fluctuations, but no trends in a single direction – happiness appears relatively stable.  Additional analyses could be conducted to see if there are statistically significant trends in happiness over time.
+INSERT TIME SERIES CHART HERE FROM DASHBOARD WHEN READY
+
+At the completion of the project the team acknowledged that additional research of the data set used for this project would have increased understanding as the background provided on Kaggle was poorly described.  Additionally, a more robust data set could be used that is related to this topic, including, including the Happy Planet Index.
