@@ -1,4 +1,8 @@
 #  World Happiness Report
+
+By:  Liliana, Nick Weyenberg, David Coyle, and Shannon Gramann
+
+
 [Link to Presentation in Google Slides](https://docs.google.com/presentation/d/1Mhrzv_qG6DSvkZ4WcqwE0Hmt7kNobXfSib1PZnh_w1s/edit#slide=id.ge779680b70_1_5)- speaker notes in notes section 
 
 [Link to Tableau Dashboard](https://public.tableau.com/app/profile/david.coyle/viz/WorldHappinessReport_16286523395800/WorldHappinessReport?publish=yes)
