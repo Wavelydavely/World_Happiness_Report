@@ -1,5 +1,5 @@
 #  World Happiness Report
-[Link to Draft Presentation in Google Slides](https://docs.google.com/presentation/d/1Mhrzv_qG6DSvkZ4WcqwE0Hmt7kNobXfSib1PZnh_w1s/edit#slide=id.ge779680b70_1_5)  
+[Link to Presentation in Google Slides](https://docs.google.com/presentation/d/1Mhrzv_qG6DSvkZ4WcqwE0Hmt7kNobXfSib1PZnh_w1s/edit#slide=id.ge779680b70_1_5)- speaker notes in notes section 
 
 [Link to Draft Tableau Dashboard](https://public.tableau.com/app/profile/david.coyle/viz/WorldHappinessReport_16286523395800/WorldHappinessReport?publish=yes)
 ## Overview
