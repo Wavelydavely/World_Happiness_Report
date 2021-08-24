@@ -1,7 +1,7 @@
 #  World Happiness Report
 [Link to Presentation in Google Slides](https://docs.google.com/presentation/d/1Mhrzv_qG6DSvkZ4WcqwE0Hmt7kNobXfSib1PZnh_w1s/edit#slide=id.ge779680b70_1_5)- speaker notes in notes section 
 
-[Link to Draft Tableau Dashboard](https://public.tableau.com/app/profile/david.coyle/viz/WorldHappinessReport_16286523395800/WorldHappinessReport?publish=yes)
+[Link to Tableau Dashboard](https://public.tableau.com/app/profile/david.coyle/viz/WorldHappinessReport_16286523395800/WorldHappinessReport?publish=yes)
 ## Overview
 
 The selected topic for the project is the world happiness report utilizing the world happiness dataset from Kaggle.  The central base for this data since 2013 is Sustainable Development Solutions Network and the Center for Sustainable Development at Columbia University. 
@@ -45,7 +45,7 @@ To accomplish the goals of this project the data set was explored and cleaned in
 
 ##  Database
 
-A database was created utilizing AWS/RDS and PostgreSQL. The database houses each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in PostgreSQL we added 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Many variables were removed from the final model. A table was created for the world happiness report which holds 11 variables of similar context. The two tables were combined using a UNION to create one table for the machine learning model, visualizations, and other analyses. 
+A database was created utilizing AWS/RDS and PostgreSQL. The database houses each variable and value from both the main happiness report and 2021 happiness report csv files. By creating the world happiness report 2021 table in PostgreSQL we added 20 variables that identify social, political, psychological, and other aspects that correlate to overall happiness of a country. Many variables were removed from the final model. A table was created for the world happiness report which holds 11 variables of similar context. The two tables were combined using a UNION to create one table for the machine learning model, visualizations, and other analyses. PySpark was used to faciliate the connection between the database and machine learning models.
 
 ## Analysis
 
@@ -61,7 +61,7 @@ The data were investigated and cleaned primarily using PANDAS with some final pa
 
 ### Machine Learning Models
 
-Two models were selected to attempt creating a robust, predictive model – Multiple Linear Regression and Random Forest. Multiple Linear Regression was selected as the starting point due to the dataset being primarily continuous data variables that directly influence the happiness score which is also a continuous variable.  Random Forest was selected as the next step in the machine learning process to see if the model could be made more robust and predictive, account for the three categorical variables through label encoding, and then rank the importance of the feature variables in the model.
+Two models were selected to attempt creating a robust, predictive model – Multiple Linear Regression and Random Forest. Multiple Linear Regression was selected as the starting point due to the dataset being primarily continuous data variables that directly influence the happiness score which is also a continuous variable.  Random Forest was selected as the next step in the machine learning process to see if the model could be made more robust and predictive and then rank the importance of the feature variables in the model.
 
 There are limitations and benefits to both models: 
 -	Multiple Linear Regression Model
@@ -92,11 +92,11 @@ The R-squared score, as an output of the model, will help determine the strength
 
 #### Random Forest Model
 
-For the random forest model the categorical variables were encoded as numeric values using the LabelEncoder(), the data was split into target and feature variables groups and then into training and testing data sets.  Variables were also scaled using Standard.Scaler()
+For the random forest model the data was split into target and feature variables groups and then into training and testing data sets.  Variables were also scaled using Standard.Scaler()
 
 Target Variable  = happiness_score
 
-Feature Variables = economic_production, social_support, life_expectancy, freedom, generosity, perception_of_corruption, country, year, and world_region
+Feature Variables = economic_production, social_support, life_expectancy, freedom, generosity, and perception_of_corruption
 
 Training and Testing Groups = X_train, X_test, y_train, y_test (Note: this test/train data set is the same as what was used for the linear regression model) 
 
@@ -116,13 +116,15 @@ Linear Regression R-squared Value
 
 Random Forest R-squared Value
 
-![Random Forest R squared](https://user-images.githubusercontent.com/80165223/130359612-130e0d2a-0ac1-4d61-8e71-9574eaeb94dd.png)
+![Random Forest R Squared](https://user-images.githubusercontent.com/80165223/130545645-ce93ea65-7f91-40e0-bfba-142119c2653f.png)
+
 
 
 In ranking the variables of most important to least important in the random forest model, the following results were yielded, which demonstrates that economic production in the model is weighted significantly more heavily than the others:
 
 
-![Random Forest Feature Importance](https://user-images.githubusercontent.com/80165223/130359592-2273435f-5adf-44d1-b56f-c79553b478ea.png)
+![Random Forest Feature Importance](https://user-images.githubusercontent.com/80165223/130545674-12b9c96c-9c77-444e-8153-f0102612e401.png)
+
 
 
 
@@ -136,9 +138,14 @@ No additional statistical analyses were conducted beyond the machine learning mo
 A storyboard in Tableau (link above) was leveraged to tell the story of the data, machine learning models, and other trends observed that relate to the project goals. The final visuals focus on the predictive value of the machine learning models, the most important feature variables in predicting happiness scores, trends over time as happiness relates to world region and country, and geographical distribution of happiness.  
 
 ## Summary
+
 The final results of the project have indicated that a random forest model is the most robust machine learning model and that economic production score is the most important variable in that model in predicting happiness.  Other feature variables that were expected to be strong predictors of happiness were significantly less predictive than economic production, like generosity and perceptions of corruption.
 
 When evaluating trends over time regarding a country or region’s happiness score, there are fluctuations, but no trends in a single direction – happiness appears relatively stable.  Additional analyses could be conducted to see if there are statistically significant trends in happiness over time.
-INSERT TIME SERIES CHART HERE FROM DASHBOARD WHEN READY
+
+
+![happines time series](https://user-images.githubusercontent.com/80165223/130545952-e613c2e7-5cab-41ee-ab9e-fb38ec3b5b93.PNG)
+
+
 
 At the completion of the project the team acknowledged that additional research of the data set used for this project would have increased understanding as the background provided on Kaggle was poorly described.  Additionally, a more robust data set could be used that is related to this topic, including, including the Happy Planet Index.
